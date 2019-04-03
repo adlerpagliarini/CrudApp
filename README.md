@@ -4,22 +4,22 @@
 - git clone https://github.com/adlerpagliarini/CrudApp.git
 
 # Running with Visual Studio
-- Open Crud.App.sln on Visual Studio 2017 15.7+ with .NET Core 2.2.104 SDK installed
-- Open Visual Studio Package Manager Console - set Crud.App.Infra.Data as default project and run the following command: update-database
-- Set Crud.App.WebSite as Startup Project
+- Open <b>Crud.App.sln</b> on Visual Studio 2017 15.7+ with .NET Core 2.2.104 SDK installed
+- Open Visual Studio Package Manager Console - set <b>Crud.App.Infra.Data</b> as default project and run the following command: update-database
+- Set <b>Crud.App.WebSite</b> as Startup Project
 - Play F5
 - Browser open: https://localhost:44324/
 
-# Running with Command-line interface
-- "cd" into the main folder project where is the solution - Crud.App.sln
+# Running with command-line interface
+- "cd" into the main folder project where is the solution - <b>Crud.App.sln</b>
 - Run the following commands:
 - dotnet restore
 - dotnet build
-- dotnet ef database update --project src/Crud.App.Infra.Data
-- dotnet run --project src/Crud.App.WebSite
+- dotnet ef database update --project <b>src/Crud.App.Infra.Data</b>
+- dotnet run --project <b>src/Crud.App.WebSite</b>
 - Browser open: https://localhost:5001/
 
-# Running with tests from Command-line interface
+# Running tests from command-line interface
 - Unit Tests and Integration Tests "dotnet test" command in the main folder, or separately, accessing their own folders
-	cd tests\Crud.App.Tests.Integration
-	cd tests\Crud.App.Tests.Unity
+- cd <b>tests\Crud.App.Tests.Integration</b>
+- cd <b>tests\Crud.App.Tests.Unity</b>

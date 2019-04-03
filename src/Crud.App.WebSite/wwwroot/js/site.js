@@ -22,19 +22,19 @@ function siteUsuarioConfiguracoes() {
 
     toastr.options.onHidden = function () {
         if (usuarioAtualizadoComSucesso === true) {
-            window.location = "https://localhost:44324/";
+            window.location = window.location.origin;
         }
     };
 
     toastr.options.onclick = function () {
         if (usuarioAtualizadoComSucesso === true) {
-            window.location = "https://localhost:44324/";
+            window.location = window.location.origin;
         }
     };
 
     toastr.options.onCloseClick = function () {
         if (usuarioAtualizadoComSucesso === true) {
-            window.location = "https://localhost:44324/";
+            window.location = window.location.origin;
         }
     };
 

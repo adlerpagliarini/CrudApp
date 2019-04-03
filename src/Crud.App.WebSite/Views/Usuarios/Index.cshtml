@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Crud.App.Application.ViewModels.UsuarioViewModel>
+
+@{
+    ViewData["Title"] = "Usuários Cadastrados";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="pull-left">
+            <a asp-action="Create" class="btn btn-primary mb-2"><span title="Novo Usuário" class="glyphicon glyphicon-plus-sign"></span> Novo Usuário</a>
+        </div>
+    </div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefone)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @{
+                        if (item.Telefone.Length > 10)
+                        {
+                            @Html.DisplayName(long.Parse(item.Telefone).ToString(@"(00) 00000-0000"));
+                        }
+                        else
+                        {
+                            @Html.DisplayName(long.Parse(item.Telefone).ToString(@"(00) 0000-0000"));
+                        }
+                    }
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

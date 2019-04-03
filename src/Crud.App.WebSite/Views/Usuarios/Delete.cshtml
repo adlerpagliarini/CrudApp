@@ -1,0 +1,48 @@
+﻿@model Crud.App.Application.ViewModels.UsuarioViewModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Usuário</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+        <dd class="col-sm-10">
+            @{
+                if (Model.Telefone.Length > 10)
+                {
+                    @Html.DisplayName(long.Parse(Model.Telefone).ToString(@"(00) 00000-0000"));
+                }
+                else
+                {
+                    @Html.DisplayName(long.Parse(Model.Telefone).ToString(@"(00) 0000-0000"));
+                }
+            }
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Excluir" class="btn btn-danger" />
+        <a href="javascript:history.go(-1)" class="btn btn-info">Voltar</a>
+    </form>
+</div>

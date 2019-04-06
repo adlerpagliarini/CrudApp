@@ -29,17 +29,17 @@ namespace Crud.App.Infra.Data.Repository
 
         public virtual IEnumerable<TEntity> ObterTodos(Expression<Func<TEntity, bool>> predicate)
         {
-            return DbSet.AsNoTracking().Where(predicate);
+            return DbSet.Where(predicate);
         }
 
         public virtual IEnumerable<TEntity> ObterTodos()
         {
-            return DbSet.AsNoTracking();
+            return DbSet;
         }
 
         public virtual TEntity ObterPorId(Guid id)
         {
-            return DbSet.AsNoTracking().FirstOrDefault(t => t.Id == id);
+            return DbSet.FirstOrDefault(t => t.Id == id);
         }
 
         public virtual void Remover(Guid id)

@@ -1,10 +1,11 @@
 ﻿using Crud.App.Domain.Core.Notifications;
 using Crud.App.Domain.Interfaces;
+using Crud.App.Domain.Services;
 using FluentValidation.Results;
 
 namespace Crud.App.Domain.CommandHandlers
 {
-    public abstract class ServiceBase
+    public abstract class ServiceBase : IServiceBase
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IDomainNotification _notifications;
